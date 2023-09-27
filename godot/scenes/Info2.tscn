@@ -1,0 +1,185 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/Info2.gd" type="Script" id=1]
+[ext_resource path="res://objects/PlayerSmart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/PlayerDumb.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/EnemyH.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://TileSet-graphic.tres" type="TileSet" id=6]
+[ext_resource path="res://art/bblev07.png" type="Texture" id=7]
+[ext_resource path="res://TileSet-collision.tres" type="TileSet" id=8]
+[ext_resource path="res://objects/EnemySpike.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/EnemyV.tscn" type="PackedScene" id=12]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=13]
+[ext_resource path="res://art/frame2h.png" type="Texture" id=14]
+
+[node name="Info2" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 288.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 200, -72 )
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[node name="Bblev" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 32, 32 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="tmap_gra" type="TileMap" parent="frame"]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 262148, 3, 0, 262150, 2, 0, 262151, 0, 0, 262152, 3, 0, 262154, 0, 0, 262155, 2, 0, 262156, 3, 0, 262158, 0, 0, 262159, 0, 0, 262160, 1, 0, 262162, 0, 0, 262163, 1, 0, 262165, 1, 0, 262167, 0, 0, 262168, 0, 0, 262169, 3, 0, 262171, 1, 0, 262173, 1, 0, 262175, 1, 0, 262177, 1, 0, 262179, 2, 0, 327687, 0, 0, 327690, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 1, 0, 327702, 1, 0, 327704, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 3, 0, 393224, 0, 0, 393225, 2, 0, 393226, 3, 0, 393228, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 26, 0, 393237, 26, 0, 393238, 0, 0, 393239, 1, 0, 393241, 0, 0, 393242, 0, 0, 393251, 0, 0, 458756, 1, 0, 458760, 0, 0, 458764, 0, 0, 458772, 23, 0, 458773, 25, 0, 458774, 3, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458787, 2, 0, 524292, 3, 0, 524294, 2, 0, 524295, 0, 0, 524296, 3, 0, 524298, 1, 0, 524300, 2, 0, 524312, 1, 0, 524314, 0, 0, 589831, 0, 0, 589834, 0, 0, 589835, 0, 0, 589839, 4, 0, 589840, 5, 0, 589841, 5, 0, 589842, 0, 0, 589843, 1, 0, 589845, 1, 0, 589847, 1, 0, 589849, 1, 0, 589859, 0, 0, 655364, 0, 0, 655365, 1, 0, 655367, 1, 0, 655395, 2, 0, 720900, 1, 0, 720902, 0, 0, 786436, 0, 0, 786437, 0, 0, 786447, 4, 0, 786448, 5, 0, 786449, 6, 0, 786467, 0, 0, 851972, 0, 0, 852003, 2, 0, 917508, 2, 0, 983055, 4, 0, 983056, 5, 0, 983057, 6, 0, 983071, 4, 0, 983072, 5, 0, 983073, 5, 0, 983074, 5, 0, 983075, 0, 0, 1048580, 2, 0, 1048611, 0, 0, 1114147, 0, 0, 1179652, 2, 0, 1179653, 5, 0, 1179654, 5, 0, 1179655, 5, 0, 1179656, 7, 0, 1179657, 9, 0, 1179658, 9, 0, 1179659, 9, 0, 1179660, 8, 0, 1179661, 9, 0, 1179662, 9, 0, 1179663, 8, 0, 1179664, 9, 0, 1179665, 9, 0, 1179666, 9, 0, 1179667, 8, 0, 1179668, 9, 0, 1179669, 9, 0, 1179670, 8, 0, 1179671, 9, 0, 1179672, 9, 0, 1179673, 9, 0, 1179674, 10, 0, 1179679, 4, 0, 1179680, 5, 0, 1179681, 5, 0, 1179682, 5, 0, 1179683, 0, 0, 1245219, 2, 0, 1310724, 2, 0, 1376261, 5, 0, 1376262, 5, 0, 1376263, 6, 0, 1376291, 2, 0, 1441796, 2, 0, 1507333, 5, 0, 1507334, 5, 0, 1507335, 5, 0, 1507336, 5, 0, 1507337, 5, 0, 1507338, 5, 0, 1507339, 5, 0, 1507340, 6, 0, 1507345, 4, 0, 1507346, 5, 0, 1507347, 6, 0, 1507351, 4, 0, 1507352, 5, 0, 1507353, 6, 0, 1507363, 0, 0, 1572868, 2, 0, 1572899, 0, 0, 1638435, 0, 0, 1703940, 0, 0, 1703941, 0, 0, 1703942, 1, 0, 1703944, 1, 0, 1703946, 1, 0, 1703948, 1, 0, 1703950, 1, 0, 1703952, 0, 0, 1703953, 0, 0, 1703954, 0, 0, 1703955, 0, 0, 1703956, 1, 0, 1703958, 1, 0, 1703960, 1, 0, 1703962, 1, 0, 1703964, 1, 0, 1703966, 1, 0, 1703968, 0, 0, 1703969, 0, 0, 1703970, 0, 0, 1703971, 0, 0 )
+
+[node name="tmap_col" type="TileMap" parent="frame"]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+tile_set = ExtResource( 8 )
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="Frame2h" type="Sprite" parent="frame"]
+position = Vector2( 76, 64 )
+texture = ExtResource( 14 )
+
+[node name="Frame2h2" type="Sprite" parent="frame"]
+position = Vector2( 124, 64 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+
+[node name="Label5" type="Label" parent="frame"]
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 152.0
+margin_bottom = 72.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 13 )
+text = "1) GET BROS >
+TO THE EXIT >"
+
+[node name="Frame2h3" type="Sprite" parent="frame"]
+position = Vector2( 124, 120 )
+texture = ExtResource( 14 )
+
+[node name="Frame2h4" type="Sprite" parent="frame"]
+position = Vector2( 132, 120 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+
+[node name="Label6" type="Label" parent="frame"]
+margin_left = 96.0
+margin_top = 112.0
+margin_right = 160.0
+margin_bottom = 128.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 13 )
+text = "2) AVOID
+BAD GUYS"
+
+[node name="Frame2h5" type="Sprite" parent="frame"]
+position = Vector2( 236, 88 )
+texture = ExtResource( 14 )
+
+[node name="Frame2h6" type="Sprite" parent="frame"]
+position = Vector2( 244, 88 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+
+[node name="Label7" type="Label" parent="frame"]
+margin_left = 208.0
+margin_top = 80.0
+margin_right = 272.0
+margin_bottom = 96.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 13 )
+text = "3) USE ^
+SWITCHES"
+
+[node name="Frame2h7" type="Sprite" parent="frame"]
+position = Vector2( 140, 192 )
+texture = ExtResource( 14 )
+
+[node name="Frame2h8" type="Sprite" parent="frame"]
+position = Vector2( 212, 192 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 14 )
+
+[node name="Label8" type="Label" parent="frame"]
+margin_left = 112.0
+margin_top = 184.0
+margin_right = 176.0
+margin_bottom = 200.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 13 )
+text = "4) WORK TOGETHER
+TO SOLVE PUZZLES"
+
+[node name="smarto" parent="frame" instance=ExtResource( 2 )]
+position = Vector2( 256, 176 )
+lookleft = true
+
+[node name="dumber" parent="frame" instance=ExtResource( 3 )]
+position = Vector2( 256, 192 )
+lookleft = true
+
+[node name="EnemyH2" parent="frame" instance=ExtResource( 4 )]
+position = Vector2( 48, 192 )
+advmask = -4
+xpre = -1
+xpost = 27
+
+[node name="anisprite" parent="frame/EnemyH2" index="1"]
+animation = "enemy3"
+
+[node name="Lever" parent="frame" instance=ExtResource( 10 )]
+position = Vector2( 264, 56 )
+
+[node name="Door" parent="frame" instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 144, 56 )
+
+[node name="EnemySpike2" parent="frame" instance=ExtResource( 9 )]
+position = Vector2( 88, 128 )
+
+[node name="EnemySpike" parent="frame" instance=ExtResource( 9 )]
+position = Vector2( 168, 128 )
+
+[node name="EnemyV" parent="frame" instance=ExtResource( 12 )]
+position = Vector2( 224, 64 )
+advmask = -1
+ypre = -3
+ypost = 16
+
+[node name="Label9" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 13 )
+text = "press any key or button"
+align = 1
+
+[node name="FadeRect" parent="." instance=ExtResource( 5 )]
+
+[editable path="frame/EnemyH2"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://art/title-brothers.png" type="Texture" id=1]
+[ext_resource path="res://art/title-bean.png" type="Texture" id=2]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/PlayerDumberHuge.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/PlayerSmartoHuge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=6]
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=8]
+[ext_resource path="res://art/bean-down.png" type="Texture" id=10]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Title-brothers" type="Sprite" parent="frame"]
+position = Vector2( 32, 96 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Title-bean" type="Sprite" parent="frame"]
+position = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="PlayerSmartoHuge" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 24, 156 )
+
+[node name="PlayerDumberHuge" parent="frame" instance=ExtResource( 4 )]
+position = Vector2( 232, 156 )
+
+[node name="cursor_bean" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 100, 144 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="cursor_label" type="Label" parent="frame"]
+margin_left = 104.0
+margin_top = 144.0
+margin_right = 116.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 6 )
+text = ">"
+
+[node name="start" type="Label" parent="frame"]
+margin_left = 120.0
+margin_top = 144.0
+margin_right = 204.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 6 )
+text = "START"
+
+[node name="info" type="Label" parent="frame"]
+margin_left = 120.0
+margin_top = 164.0
+margin_right = 204.0
+margin_bottom = 180.0
+custom_fonts/font = ExtResource( 6 )
+text = "INFO"
+
+[node name="control" type="Label" parent="frame"]
+margin_left = 120.0
+margin_top = 184.0
+margin_right = 204.0
+margin_bottom = 200.0
+custom_fonts/font = ExtResource( 6 )
+text = "CONTROL"
+
+[node name="about" type="Label" parent="frame"]
+margin_left = 120.0
+margin_top = 204.0
+margin_right = 204.0
+margin_bottom = 220.0
+custom_fonts/font = ExtResource( 6 )
+text = "ABOUT"
+
+[node name="minihelp" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 8 )
+text = "use keyboard or gamepad"
+align = 1
+
+[node name="FadeRect" parent="." instance=ExtResource( 3 )]

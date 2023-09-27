@@ -1,0 +1,209 @@
+    3, // smarto_ini_cx
+    27, // smarto_ini_cy
+    0, // smarto_ini_lookleft
+    22, // dumber_ini_cx
+    27, // dumber_ini_cy
+    0, // dumber_ini_lookleft
+    25, // object_count
+    {
+        { // BEGIN OBJECT
+            1, // OTYPE_ENEMYH
+            2, // ini_cx
+            5, // ini_cy
+            18, // type|speed (extra1)
+            -40, // xpre (extra2)
+            40, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            2, // OTYPE_ENEMYV
+            7, // ini_cx
+            22, // ini_cy
+            1, // type|speed (extra1)
+            0, // xpre (extra2)
+            5, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            2, // OTYPE_ENEMYV
+            13, // ini_cx
+            21, // ini_cy
+            1, // type|speed (extra1)
+            -1, // xpre (extra2)
+            4, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            2, // OTYPE_ENEMYV
+            19, // ini_cx
+            20, // ini_cy
+            1, // type|speed (extra1)
+            -2, // xpre (extra2)
+            3, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            2, // OTYPE_ENEMYV
+            25, // ini_cx
+            19, // ini_cy
+            1, // type|speed (extra1)
+            -3, // xpre (extra2)
+            2, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            2, // OTYPE_ENEMYV
+            31, // ini_cx
+            18, // ini_cy
+            1, // type|speed (extra1)
+            -4, // xpre (extra2)
+            1, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            5, // ini_cx
+            13, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            24, // ini_cx
+            7, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            31, // ini_cx
+            27, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            9, // ini_cx
+            12, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            12, // ini_cx
+            11, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            15, // ini_cx
+            10, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            18, // ini_cx
+            9, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            21, // ini_cx
+            8, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            27, // ini_cx
+            6, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            5, // OTYPE_DOOR
+            25, // ini_cx
+            27, // ini_cy
+            1, // closed (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            5, // OTYPE_DOOR
+            11, // ini_cx
+            5, // ini_cy
+            1, // closed (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            5, // OTYPE_DOOR
+            31, // ini_cx
+            5, // ini_cy
+            0, // closed (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            6, // OTYPE_LEVER
+            27, // ini_cx
+            24, // ini_cy
+            1, // closed (extra1)
+            1, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            6, // OTYPE_LEVER
+            2, // ini_cx
+            9, // ini_cy
+            1, // closed (extra1)
+            1, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            7, // OTYPE_CONV
+            31, // ini_cx1
+            13, // ini_cy
+            32, // ini_cx2 (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            7, // OTYPE_CONV
+            25, // ini_cx1
+            15, // ini_cy
+            26, // ini_cx2 (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            7, // OTYPE_CONV
+            19, // ini_cx1
+            17, // ini_cy
+            20, // ini_cx2 (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            7, // OTYPE_CONV
+            13, // ini_cx1
+            19, // ini_cy
+            14, // ini_cx2 (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            7, // OTYPE_CONV
+            7, // ini_cx1
+            21, // ini_cy
+            8, // ini_cx2 (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+    }

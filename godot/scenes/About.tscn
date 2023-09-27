@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=1]
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=2]
+[ext_resource path="res://scenes/About.gd" type="Script" id=3]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bitmapfonts/bbfont-red-8x8.tres" type="BitmapFont" id=5]
+[ext_resource path="res://bitmapfonts/bbfont-blue-8x8.tres" type="BitmapFont" id=6]
+[ext_resource path="res://art/moot.png" type="Texture" id=7]
+
+[node name="About" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="frame"]
+margin_top = 24.0
+margin_right = 320.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+text = "BEAN BROTHERS 2023"
+align = 1
+
+[node name="LabelOrange" type="Label" parent="frame"]
+margin_top = 48.0
+margin_right = 320.0
+margin_bottom = 210.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 1 )
+text = "For ZX Spectrum Next (and others) 
+
+By David Crespo Tascon
+(code, graphics, chiptunes) 
+
+davidprograma.itch.io 
+youtube.com/@Davidprograma
+github.com/dcrespo3d  
+
+Based on Bean Brothers for ZX Spectrum
+(c) 2018 Dave Hughes, with permission 
+
+stonechatproductions.co.uk
+
+Theme songs by Meteoritos Music 
+
+sptfy.com/meteo 
+
+Developed using these great tools:
+"
+align = 1
+
+[node name="LabelBlue" type="Label" parent="frame"]
+margin_top = 48.0
+margin_right = 320.0
+margin_bottom = 192.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 6 )
+text = "
+
+
+
+
+davidprograma.itch.io 
+youtube.com/@Davidprograma
+github.com/dcrespo3d  
+
+
+
+
+stonechatproductions.co.uk
+
+
+
+sptfy.com/meteo "
+align = 1
+
+[node name="LabelRed" type="Label" parent="frame"]
+margin_top = 48.0
+margin_right = 320.0
+margin_bottom = 216.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 5 )
+text = "
+
+   David Crespo Tascon
+
+
+
+
+
+
+
+         Dave Hughes                  
+
+
+
+               Meteoritos Music 
+
+
+
+
+
+Godot Engine  | Z88DK 
+Arkos Tracker 2 | Aseprite"
+align = 1
+
+[node name="Label9" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 1 )
+text = "press any key to continue"
+align = 1
+
+[node name="version" type="Label" parent="frame"]
+visible = false
+margin_top = 248.0
+margin_right = 320.0
+margin_bottom = 256.0
+custom_fonts/font = ExtResource( 6 )
+text = "version"
+
+[node name="boot" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 328, 248 )
+texture = ExtResource( 7 )
+
+[node name="FadeRect" parent="." instance=ExtResource( 4 )]

@@ -1,0 +1,338 @@
+void player_adjust_update_pos(Player* player)
+{
+#define player_adjust_update_pos_ASM
+#ifndef player_adjust_update_pos_ASM
+    while (player->dx < 0) {
+        player->dx += 8;
+        player->cx -= 1;
+    }
+    while (player->dx > 7) {
+        player->dx -= 8;
+        player->cx += 1;
+    }
+    while (player->dy < 0) {
+        player->dy += 8;
+        player->cy -= 1;
+    }
+    while (player->dy > 7) {
+        player->dy -= 8;
+        player->cy += 1;
+    }
+    u16 x = player->cx * 8 + player->dx;
+    u16 y = player->cy * 8 + player->dy;
+    AniSprite* asdef = player->asdef;
+    asdef->x = x;
+    asdef->y = y;
+#else
+__asm
+    ; depends on Player struct
+
+    POP     BC      ; return address
+    POP     HL      ; player
+    PUSH    HL      ; restore stack
+    PUSH    BC      ; restore stack
+
+    LD      A, (HL) ; get player->cx
+    LD      B, A
+    INC     HL
+    LD      A, (HL) ; get player->dx
+    LD      C, A
+
+    SRA     A
+    SRA     A
+    SRA     A
+    ADD     A, B
+    LD      B, A
+
+    LD      A, C
+    AND     A, %00000111
+    LD      C, A
+
+    DEC     HL
+    LD      A, B
+    LD      (HL), A ; set player->cx
+    INC     HL
+    LD      A, C
+    LD      (HL), A ; set player->dx
+    INC     HL
+
+    PUSH    HL
+    LD      H, 0
+    LD      L, B    ; cx -> HL
+    ADD     HL, HL  ; mul * 8
+    ADD     HL, HL
+    ADD     HL, HL
+    LD      B, 0
+    ADD     HL, BC  ; add dx
+    LD      BC, HL
+    POP     HL
+    PUSH    BC
+
+    LD      A, (HL) ; get player->cy
+    LD      B, A
+    INC     HL
+    LD      A, (HL) ; get player->dy
+    LD      C, A
+
+    SRA     A
+    SRA     A
+    SRA     A
+    ADD     A, B
+    LD      B, A
+
+    LD      A, C
+    AND     A, %00000111
+    LD      C, A
+
+    DEC     HL
+    LD      A, B
+    LD      (HL), A ; set player->cy
+    INC     HL
+    LD      A, C
+    LD      (HL), A ; set player->dy
+    INC     HL
+
+    PUSH    HL
+    LD      H, 0
+    LD      L, B    ; cy -> HL
+    ADD     HL, HL  ; mul * 8
+    ADD     HL, HL
+    ADD     HL, HL
+    LD      B, 0
+    ADD     HL, BC  ; add dy
+    LD      BC, HL
+    POP     HL
+    PUSH    BC
+
+    INC     HL      ; point to player->asdef
+    LD      A, (HL) ; dereference pointer
+    LD      C, A
+    INC     HL
+    LD      A, (HL)
+    LD      B, A
+    LD      HL, BC
+
+    POP     DE
+    POP     BC
+
+    INC     HL
+    LD      A, C
+    LD      (HL), A
+    INC     HL
+    LD      A, B
+    LD      (HL), A
+    INC     HL
+    LD      A, E
+    LD      (HL), A
+    INC     HL
+    LD      A, D
+    LD      (HL), A
+
+__endasm
+#endif
+}
+
+void player_adjust_pos(Player* player)
+{
+// #define player_adjust_pos_ASM
+#ifndef player_adjust_pos_ASM
+    player->cx += player->dx >> 3;
+    player->dx &= 7;
+    player->cy += player->dy >> 3;
+    player->dy &= 7;
+    // while (player->dx < 0) {
+    //     player->dx += 8;
+    //     player->cx -= 1;
+    // }
+    // while (player->dx > 7) {
+    //     player->dx -= 8;
+    //     player->cx += 1;
+    // }
+    // while (player->dy < 0) {
+    //     player->dy += 8;
+    //     player->cy -= 1;
+    // }
+    // while (player->dy > 7) {
+    //     player->dy -= 8;
+    //     player->cy += 1;
+    // }
+#else
+__asm
+    ; depends on Player struct
+
+    POP     BC      ; return address
+    POP     HL      ; player
+    PUSH    HL      ; restore stack
+    PUSH    BC      ; restore stack
+
+    LD      A, (HL) ; get player->cx
+    LD      B, A
+    INC     HL
+    LD      A, (HL) ; get player->dx
+    LD      C, A
+
+    SRA     A
+    SRA     A
+    SRA     A
+    ADD     A, B
+    LD      B, A
+
+    LD      A, C
+    AND     A, %00000111
+    LD      C, A
+
+    DEC     HL
+    LD      A, B
+    LD      (HL), A ; set player->cx
+    INC     HL
+    LD      A, C
+    LD      (HL), A ; set player->dx
+    INC     HL
+
+    LD      A, (HL) ; get player->cy
+    LD      B, A
+    INC     HL
+    LD      A, (HL) ; get player->dy
+    LD      C, A
+
+    SRA     A
+    SRA     A
+    SRA     A
+    ADD     A, B
+    LD      B, A
+
+    LD      A, C
+    AND     A, %00000111
+    LD      C, A
+
+    DEC     HL
+    LD      A, B
+    LD      (HL), A ; set player->cy
+    INC     HL
+    LD      A, C
+    LD      (HL), A ; set player->dy
+    INC     HL
+
+__endasm
+#endif
+}
+
+void player_update_pos(Player* player)
+{
+// #define player_update_pos_ASM
+#ifndef player_update_pos_ASM
+    u16 x = player->cx * 8 + player->dx;
+    u16 y = player->cy * 8 + player->dy;
+    AniSprite* asdef = player->asdef;
+    asdef->x = x;
+    asdef->y = y;
+#else
+__asm
+    ; depends on Player struct
+
+    POP     BC      ; return address
+    POP     HL      ; player
+    PUSH    HL      ; restore stack
+    PUSH    BC      ; restore stack
+
+    LD      A, (HL) ; get player->cx
+    LD      B, A
+    INC     HL
+    LD      A, (HL) ; get player->dx
+    LD      C, A
+    INC     HL
+
+    PUSH    HL
+    LD      H, 0
+    LD      L, B    ; cx -> HL
+    ADD     HL, HL  ; mul * 8
+    ADD     HL, HL
+    ADD     HL, HL
+    LD      B, 0
+    ADD     HL, BC  ; add dx
+    LD      BC, HL
+    POP     HL
+    PUSH    BC
+
+    LD      A, (HL) ; get player->cy
+    LD      B, A
+    INC     HL
+    LD      A, (HL) ; get player->dy
+    LD      C, A
+    INC     HL
+
+    PUSH    HL
+    LD      H, 0
+    LD      L, B    ; cy -> HL
+    ADD     HL, HL  ; mul * 8
+    ADD     HL, HL
+    ADD     HL, HL
+    LD      B, 0
+    ADD     HL, BC  ; add dy
+    LD      BC, HL
+    POP     HL
+    PUSH    BC
+
+    INC     HL      ; point to player->asdef
+    LD      A, (HL) ; dereference pointer
+    LD      C, A
+    INC     HL
+    LD      A, (HL)
+    LD      B, A
+    LD      HL, BC
+
+    POP     DE
+    POP     BC
+
+    INC     HL
+    LD      A, C
+    LD      (HL), A
+    INC     HL
+    LD      A, B
+    LD      (HL), A
+    INC     HL
+    LD      A, E
+    LD      (HL), A
+    INC     HL
+    LD      A, D
+    LD      (HL), A
+
+__endasm
+#endif
+}
+
+void player_read_collision(Player* player)
+{
+    u8* src = collmap;
+    u8* dst = &player->c0;
+
+    src += (-1 + player->cx) + 40 * (-1 + player->cy);
+
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+
+    src += 36;
+
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+
+    src += 36;
+
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+
+    src += 36;
+
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+    *dst++ = *src++;
+}
+
+

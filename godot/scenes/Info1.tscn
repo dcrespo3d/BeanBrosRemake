@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=1]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=2]
+[ext_resource path="res://scenes/Info1.gd" type="Script" id=3]
+[ext_resource path="res://objects/PlayerSmartoBig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/PlayerDumberBig.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=6]
+
+[node name="Info1" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="frame"]
+margin_left = 52.0
+margin_top = 40.0
+margin_right = 200.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 1 )
+text = "THIS IS FABE"
+
+[node name="Label2" type="Label" parent="frame"]
+margin_left = 52.0
+margin_top = 104.0
+margin_right = 200.0
+margin_bottom = 120.0
+custom_fonts/font = ExtResource( 1 )
+text = "THIS IS LUBI"
+
+[node name="Label3" type="Label" parent="frame"]
+margin_left = 112.0
+margin_top = 160.0
+margin_right = 216.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 1 )
+text = "THEY ARE"
+
+[node name="Label4" type="Label" parent="frame"]
+margin_left = 52.0
+margin_top = 180.0
+margin_right = 320.0
+margin_bottom = 192.0
+custom_fonts/font = ExtResource( 1 )
+text = "THE BEAN BROTHERS!"
+
+[node name="Label9" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 2 )
+text = "press any key or button"
+align = 1
+
+[node name="PlayerSmartoBig" parent="frame" instance=ExtResource( 4 )]
+position = Vector2( 272, 32 )
+scale = Vector2( -1, 1 )
+
+[node name="PlayerDumberBig" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 240, 96 )
+
+[node name="FadeRect" parent="." instance=ExtResource( 6 )]

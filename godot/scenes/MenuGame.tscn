@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/MenuGame.gd" type="Script" id=1]
+[ext_resource path="res://art/bean-down.png" type="Texture" id=4]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=9]
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=10]
+
+[node name="MenuGame" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="cursor_bean" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 100, 144 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="cursor_label" type="Label" parent="frame"]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 28.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 10 )
+text = ">"
+
+[node name="orig" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 212.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 10 )
+text = "ORIGINAL LEVELS"
+
+[node name="ext" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 120.0
+margin_right = 212.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 10 )
+text = "EXTENDED LEVELS"
+
+[node name="levsel" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 72.0
+margin_right = 284.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 10 )
+text = "SELECT ORIGINAL LEVEL"
+
+[node name="back" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 216.0
+margin_right = 176.0
+margin_bottom = 232.0
+custom_fonts/font = ExtResource( 10 )
+text = "BACK TO MENU"
+
+[node name="origsub" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 48.0
+margin_right = 208.0
+margin_bottom = 56.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 9 )
+text = "play from start to end"
+
+[node name="extsub" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 144.0
+margin_right = 248.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 64, -16 )
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 9 )
+text = "play from start to end"
+
+[node name="levselsub" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 248.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( 64, -16 )
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 9 )
+text = "play any completed level"
+
+[node name="levsel2" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 168.0
+margin_right = 284.0
+margin_bottom = 184.0
+custom_fonts/font = ExtResource( 10 )
+text = "SELECT EXTENDED LEVEL"
+
+[node name="levselsub2" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 192.0
+margin_right = 248.0
+margin_bottom = 208.0
+rect_pivot_offset = Vector2( 64, -16 )
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 9 )
+text = "play any completed level"
+
+[node name="FadeRect" parent="." instance=ExtResource( 8 )]

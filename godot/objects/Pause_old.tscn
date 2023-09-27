@@ -1,0 +1,143 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=1]
+[ext_resource path="res://objects/Pause.gd" type="Script" id=2]
+
+[node name="PauseScene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="mask" type="ColorRect" parent="."]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 0.247059 )
+
+[node name="banner" type="ColorRect" parent="."]
+margin_left = 56.0
+margin_top = 64.0
+margin_right = 264.0
+margin_bottom = 192.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="label0" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 80.0
+margin_right = 248.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 1 )
+text = "GAME PAUSED  "
+
+[node name="label0a" type="Label" parent="."]
+visible = false
+margin_left = 88.0
+margin_top = 80.0
+margin_right = 248.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 1 )
+text = "JUEGO PAUSADO"
+
+[node name="label1" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 112.0
+margin_right = 248.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "CONTINUE     "
+
+[node name="label1a" type="Label" parent="."]
+visible = false
+margin_left = 88.0
+margin_top = 112.0
+margin_right = 248.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "CONTINUAR"
+
+[node name="label2" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 136.0
+margin_right = 248.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 1 )
+text = "RESTART LEVEL"
+
+[node name="label2a" type="Label" parent="."]
+visible = false
+margin_left = 88.0
+margin_top = 136.0
+margin_right = 248.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 1 )
+text = "REPETIR NIVEL"
+
+[node name="label3" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 160.0
+margin_right = 248.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 1 )
+text = "EXIT TO MENU "
+
+[node name="label3a" type="Label" parent="."]
+visible = false
+margin_left = 88.0
+margin_top = 160.0
+margin_right = 248.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 1 )
+text = "SALIR AL MENU"
+
+[node name="cursor" type="Label" parent="."]
+margin_left = 68.0
+margin_top = 112.0
+margin_right = 84.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+
+[node name="zxnhelper1" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="zxnhelper1"]
+margin_left = 48.0
+margin_top = 72.0
+margin_right = 176.0
+margin_bottom = 136.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="zxnhelper1"]
+margin_left = 144.0
+margin_top = 72.0
+margin_right = 272.0
+margin_bottom = 136.0
+color = Color( 1, 0.984314, 0, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="zxnhelper1"]
+margin_left = 48.0
+margin_top = 120.0
+margin_right = 176.0
+margin_bottom = 184.0
+color = Color( 0.172549, 1, 0, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="zxnhelper1"]
+margin_left = 144.0
+margin_top = 120.0
+margin_right = 272.0
+margin_bottom = 184.0
+color = Color( 0, 0.368627, 1, 1 )
+
+[node name="zxnhelper2" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="zxnhelper2"]
+margin_left = 56.0
+margin_top = 64.0
+margin_right = 184.0
+margin_bottom = 192.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="zxnhelper2"]
+margin_left = 136.0
+margin_top = 64.0
+margin_right = 264.0
+margin_bottom = 192.0
+color = Color( 1, 0.984314, 0, 1 )

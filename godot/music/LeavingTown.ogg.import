@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LeavingTown.ogg-8534c4b9973dc6b854dc41f11650d64d.oggstr"
+
+[deps]
+
+source_file="res://music/LeavingTown.ogg"
+dest_files=[ "res://.import/LeavingTown.ogg-8534c4b9973dc6b854dc41f11650d64d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=6.8

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/col-smarto-huge-head.png" type="Texture" id=1]
+[ext_resource path="res://art/col-smarto-huge-shoes.png" type="Texture" id=2]
+[ext_resource path="res://objects/PlayerHuge.gd" type="Script" id=3]
+
+[node name="PlayerSmartoHuge" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="shoes" type="Sprite" parent="."]
+position = Vector2( 0, 48 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="head" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false

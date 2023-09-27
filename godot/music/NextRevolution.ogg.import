@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/NextRevolution.ogg-c2dda93d2a848441dc6b474fcbb4e1ac.oggstr"
+
+[deps]
+
+source_file="res://music/NextRevolution.ogg"
+dest_files=[ "res://.import/NextRevolution.ogg-c2dda93d2a848441dc6b474fcbb4e1ac.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=20.8

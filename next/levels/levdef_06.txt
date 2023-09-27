@@ -1,0 +1,41 @@
+    6, // smarto_ini_cx
+    24, // smarto_ini_cy
+    1, // smarto_ini_lookleft
+    9, // dumber_ini_cx
+    24, // dumber_ini_cy
+    1, // dumber_ini_lookleft
+    4, // object_count
+    {
+        { // BEGIN OBJECT
+            1, // OTYPE_ENEMYH
+            6, // ini_cx
+            20, // ini_cy
+            1, // type|speed (extra1)
+            -1, // xpre (extra2)
+            27, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            1, // OTYPE_ENEMYH
+            18, // ini_cx
+            9, // ini_cy
+            18, // type|speed (extra1)
+            -13, // xpre (extra2)
+            15, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            1, // OTYPE_ENEMYH
+            32, // ini_cx
+            14, // ini_cy
+            15, // type|speed (extra1)
+            -27, // xpre (extra2)
+            1, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            1, // OTYPE_ENEMYH
+            32, // ini_cx
+            24, // ini_cy
+            30, // type|speed (extra1)
+            -27, // xpre (extra2)
+            1, // xpost (extra3)
+        }, // END OBJECT
+    }

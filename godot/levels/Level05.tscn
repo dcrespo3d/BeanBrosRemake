@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/EnemySpike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/EnemyH.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/PlayerSmart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/PlayerDumb.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scripts/GameScreen.gd" type="Script" id=8]
+[ext_resource path="res://TileSet-graphic.tres" type="TileSet" id=9]
+[ext_resource path="res://TileSet-collision.tres" type="TileSet" id=10]
+[ext_resource path="res://art/bblev05.png" type="Texture" id=11]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+levnum = 5
+wall_offset = 4
+plat_offset = 2
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 288.0
+margin_bottom = 216.0
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[node name="Bblev1" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 32, 32 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="tmap_gra" type="TileMap" parent="frame"]
+tile_set = ExtResource( 9 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -393149, 10, 0, 262148, 3, 0, 262150, 0, 0, 262151, 0, 0, 262152, 3, 0, 262154, 0, 0, 262155, 1, 0, 262157, 1, 0, 262159, 1, 0, 262161, 1, 0, 262163, 0, 0, 262164, 0, 0, 262165, 1, 0, 262167, 0, 0, 262168, 0, 0, 262169, 3, 0, 262171, 0, 0, 262172, 1, 0, 262174, 1, 0, 262176, 1, 0, 262178, 3, 0, 327686, 1, 0, 327707, 0, 0, 327708, 0, 0, 327709, 3, 0, 327711, 1, 0, 327713, 0, 0, 393220, 0, 0, 393221, 3, 0, 393223, 0, 0, 393247, 0, 0, 393248, 1, 0, 393250, 1, 0, 458756, 0, 0, 458783, 0, 0, 458784, 3, 0, 458786, 0, 0, 458787, 0, 0, 524292, 1, 0, 524322, 1, 0, 589828, 2, 0, 589829, 0, 0, 589858, 0, 0, 589859, 2, 0, 655365, 2, 0, 655372, 3, 0, 655374, 5, 0, 655375, 5, 0, 655376, 5, 0, 655377, 5, 0, 655378, 1, 0, 655380, 1, 0, 720900, 2, 0, 720914, 0, 0, 720915, 1, 0, 720917, 1, 0, 720931, 2, 0, 786437, 3, 0, 786454, 3, 0, 851972, 2, 0, 852003, 2, 0, 917509, 2, 0, 917510, 0, 0, 917511, 0, 0, 917512, 7, 0, 917513, 9, 0, 917514, 9, 0, 917515, 10, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917526, 0, 0, 917527, 1, 0, 917529, 0, 0, 917530, 15, 0, 917531, 17, 0, 917532, 17, 0, 917533, 18, 0, 917537, 4, 0, 917538, 5, 0, 983044, 2, 0, 983046, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983062, 1, 0, 983064, 1, 0, 983066, 26, 0, 983067, 26, 0, 983068, 1, 0, 983075, 2, 0, 1048581, 2, 0, 1048602, 23, 0, 1048603, 25, 0, 1048605, 0, 0, 1114116, 2, 0, 1114141, 0, 0, 1114142, 5, 0, 1114143, 6, 0, 1114147, 0, 0, 1179653, 2, 0, 1179665, 3, 0, 1179667, 1, 0, 1179669, 1, 0, 1179671, 1, 0, 1179673, 1, 0, 1179675, 1, 0, 1179677, 0, 0, 1179683, 0, 0, 1245188, 0, 0, 1245194, 3, 0, 1245196, 1, 0, 1245198, 3, 0, 1245200, 0, 0, 1245203, 0, 0, 1245204, 1, 0, 1245206, 1, 0, 1245208, 1, 0, 1245210, 1, 0, 1245212, 0, 0, 1245213, 0, 0, 1245219, 2, 0, 1310724, 3, 0, 1310726, 1, 0, 1310728, 1, 0, 1310732, 0, 0, 1310733, 0, 0, 1310747, 0, 0, 1310748, 3, 0, 1310753, 4, 0, 1310754, 5, 0, 1376262, 0, 0, 1376263, 1, 0, 1376265, 1, 0, 1376267, 1, 0, 1376269, 0, 0, 1376291, 0, 0, 1441796, 0, 0, 1441802, 0, 0, 1441803, 3, 0, 1441805, 0, 0, 1441821, 0, 0, 1441827, 2, 0, 1507332, 2, 0, 1507348, 4, 0, 1507349, 5, 0, 1507350, 5, 0, 1507351, 6, 0, 1507357, 0, 0, 1507358, 5, 0, 1507359, 6, 0, 1572899, 2, 0, 1638404, 2, 0, 1703941, 0, 0, 1703942, 1, 0, 1703944, 1, 0, 1703946, 0, 0, 1703947, 0, 0, 1703948, 1, 0, 1703950, 1, 0, 1703952, 1, 0, 1703954, 0, 0, 1703955, 0, 0, 1703956, 1, 0, 1703958, 1, 0, 1703960, 1, 0, 1703962, 1, 0, 1703964, 1, 0, 1703966, 0, 0, 1703967, 0, 0, 1703968, 0, 0, 1703969, 0, 0, 1703970, 1, 0 )
+
+[node name="tmap_col" type="TileMap" parent="frame"]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="smarto" parent="frame" instance=ExtResource( 6 )]
+position = Vector2( 176, 168 )
+
+[node name="dumber" parent="frame" instance=ExtResource( 7 )]
+position = Vector2( 152, 168 )
+lookleft = true
+
+[node name="EnemyH1" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 56, 56 )
+xpre = 0
+xpost = 22
+
+[node name="EnemyH2" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 216, 192 )
+xpre = -22
+xpost = 6
+
+[node name="EnemySpike" parent="frame" instance=ExtResource( 4 )]
+position = Vector2( 96, 136 )
+
+[node name="EnemySpike2" parent="frame" instance=ExtResource( 4 )]
+position = Vector2( 160, 128 )
+
+[node name="Lever" parent="frame" instance=ExtResource( 1 )]
+position = Vector2( 48, 136 )
+
+[node name="anisprite" parent="frame/Lever" index="0"]
+flip_h = true
+
+[node name="Lever2" parent="frame" instance=ExtResource( 1 )]
+position = Vector2( 40, 184 )
+
+[node name="anisprite" parent="frame/Lever2" index="0"]
+flip_h = true
+
+[node name="Door" parent="frame" instance=ExtResource( 2 )]
+position = Vector2( 144, 96 )
+
+[node name="Door2" parent="frame" instance=ExtResource( 2 )]
+position = Vector2( 88, 192 )
+closed = false
+
+[node name="FadeRect" parent="." instance=ExtResource( 3 )]
+
+[editable path="frame/Lever"]
+[editable path="frame/Lever2"]

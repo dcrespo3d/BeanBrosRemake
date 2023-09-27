@@ -1,0 +1,178 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scenes/Final2.gd" type="Script" id=1]
+[ext_resource path="res://TileSet-graphic.tres" type="TileSet" id=2]
+[ext_resource path="res://bitmapfonts/bbfont-blue-8x8.tres" type="BitmapFont" id=3]
+[ext_resource path="res://art/final-camera.png" type="Texture" id=4]
+[ext_resource path="res://objects/PlayerSmart.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/PlayerDumb.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TileSet-collision.tres" type="TileSet" id=7]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=9]
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=10]
+[ext_resource path="res://art/frame1h-green.png" type="Texture" id=11]
+[ext_resource path="res://art/frame1h-orange.png" type="Texture" id=12]
+[ext_resource path="res://art/frame1h-red.png" type="Texture" id=13]
+[ext_resource path="res://objects/FinalObject.tscn" type="PackedScene" id=14]
+[ext_resource path="res://bitmapfonts/bbfont-green-8x8.tres" type="BitmapFont" id=15]
+[ext_resource path="res://bitmapfonts/bbfont-red-8x8.tres" type="BitmapFont" id=16]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="bg2" type="ColorRect" parent="frame"]
+margin_top = 80.0
+margin_right = 320.0
+margin_bottom = 152.0
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[node name="bg3" type="ColorRect" parent="frame"]
+margin_left = 200.0
+margin_top = 104.0
+margin_right = 216.0
+margin_bottom = 120.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Final-camera" type="Sprite" parent="frame"]
+position = Vector2( 208, 96 )
+texture = ExtResource( 4 )
+
+[node name="msg" type="Label" parent="frame"]
+margin_left = 24.0
+margin_top = 40.0
+margin_right = 300.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 10 )
+text = "WELL DONE!"
+align = 1
+
+[node name="msg2" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 176.0
+margin_right = 280.0
+margin_bottom = 200.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 3 )
+text = "You have rescued Fabe and Lubi.
+They are free to resume their
+work at the bean factory..."
+
+[node name="pak" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 9 )
+text = "press any key or button"
+align = 1
+
+[node name="tmap_gra" type="TileMap" parent="frame"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 983040, 9, 0, 983041, 9, 0, 983042, 8, 0, 983043, 9, 0, 983044, 9, 0, 983045, 9, 0, 983046, 8, 0, 983047, 9, 0, 983048, 9, 0, 983049, 9, 0, 983050, 8, 0, 983051, 9, 0, 983052, 9, 0, 983053, 9, 0, 983054, 8, 0, 983055, 9, 0, 983056, 9, 0, 983057, 9, 0, 983058, 8, 0, 983059, 9, 0, 983060, 9, 0, 983061, 9, 0, 983062, 8, 0, 983063, 9, 0, 983064, 9, 0, 983065, 9, 0, 983066, 10, 0, 1048576, 87, 0, 1048578, 87, 0, 1048580, 87, 0, 1048582, 87, 0, 1048584, 87, 0, 1048586, 87, 0, 1048588, 87, 0, 1048590, 87, 0, 1048592, 87, 0, 1048594, 87, 0, 1048596, 87, 0, 1048598, 87, 0, 1048600, 87, 0, 1048602, 88, 0, 1179648, 69, 0, 1179649, 69, 0, 1179650, 69, 0, 1179651, 69, 0, 1179652, 69, 0, 1179653, 69, 0, 1179654, 69, 0, 1179655, 69, 0, 1179656, 69, 0, 1179657, 69, 0, 1179658, 69, 0, 1179659, 69, 0, 1179660, 69, 0, 1179661, 69, 0, 1179662, 69, 0, 1179663, 69, 0, 1179664, 69, 0, 1179665, 69, 0, 1179666, 69, 0, 1179667, 69, 0, 1179668, 69, 0, 1179669, 69, 0, 1179670, 69, 0, 1179671, 69, 0, 1179672, 69, 0, 1179673, 69, 0, 1179674, 69, 0, 1179675, 69, 0, 1179676, 69, 0, 1179677, 69, 0, 1179678, 69, 0, 1179679, 69, 0, 1179680, 69, 0, 1179681, 69, 0, 1179682, 69, 0, 1179683, 69, 0, 1179684, 69, 0, 1179685, 69, 0, 1179686, 69, 0, 1179687, 69, 0 )
+
+[node name="tmap_col" type="TileMap" parent="frame"]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="smarto" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 232, 128 )
+
+[node name="dumber" parent="frame" instance=ExtResource( 6 )]
+position = Vector2( 256, 128 )
+active = true
+lookleft = true
+
+[node name="AnimatedSprite" parent="frame/dumber" index="1"]
+frame = 1
+
+[node name="fo0" parent="frame" instance=ExtResource( 14 )]
+position = Vector2( -32, 104 )
+
+[node name="fo1" parent="frame" instance=ExtResource( 14 )]
+position = Vector2( -80, 104 )
+
+[node name="fo2" parent="frame" instance=ExtResource( 14 )]
+position = Vector2( -128, 104 )
+
+[node name="fo3" parent="frame" instance=ExtResource( 14 )]
+position = Vector2( -176, 104 )
+
+[node name="fo4" parent="frame" instance=ExtResource( 14 )]
+position = Vector2( -224, 104 )
+
+[node name="bg4" type="ColorRect" parent="frame"]
+margin_left = -24.0
+margin_top = 104.0
+margin_bottom = 120.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="bg5" type="ColorRect" parent="frame"]
+margin_left = 216.0
+margin_top = 104.0
+margin_right = 320.0
+margin_bottom = 120.0
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[node name="FadeRect" parent="." instance=ExtResource( 8 )]
+
+[node name="bean" type="Sprite" parent="."]
+visible = false
+position = Vector2( 244, 87 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="bean" type="Label" parent="bean"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 80.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 15 )
+text = "BEAN"
+align = 1
+
+[node name="scanning" type="Sprite" parent="."]
+visible = false
+position = Vector2( 244, 87 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="scanning" type="Label" parent="scanning"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 80.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 9 )
+text = "scanning"
+
+[node name="notbean" type="Sprite" parent="."]
+position = Vector2( 244, 87 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="notbean" type="Label" parent="notbean"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 80.0
+margin_bottom = 16.0
+custom_fonts/font = ExtResource( 16 )
+text = "NOT BEAN"
+align = 1
+
+[editable path="frame/dumber"]

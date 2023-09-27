@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://objects/PlayerDumberBig.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=2]
+[ext_resource path="res://scenes/Inter.gd" type="Script" id=3]
+[ext_resource path="res://objects/PlayerSmartoBig.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=5]
+[ext_resource path="res://art/skull.png" type="Texture" id=6]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=10]
+
+[node name="Inter" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="label1" type="Label" parent="frame"]
+margin_top = 48.0
+margin_right = 320.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+text = "GET READY!"
+align = 1
+
+[node name="label2" type="Label" parent="frame"]
+margin_top = 160.0
+margin_right = 320.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 2 )
+text = "NEXT LEVEL: 1"
+align = 1
+
+[node name="label3" type="Label" parent="frame"]
+margin_top = 192.0
+margin_right = 320.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 2 )
+text = "PRESS ANY KEY OR BUTTON"
+align = 1
+
+[node name="PlayerDumberBig" parent="frame" instance=ExtResource( 1 )]
+position = Vector2( 172, 96 )
+
+[node name="PlayerSmartoBig" parent="frame" instance=ExtResource( 4 )]
+position = Vector2( 116, 96 )
+
+[node name="skull" type="Sprite" parent="frame"]
+position = Vector2( 24, 24 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="lives" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 32.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 5 )
+text = "0"
+
+[node name="FadeRect" parent="." instance=ExtResource( 10 )]

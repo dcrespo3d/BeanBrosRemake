@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=1]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=2]
+[ext_resource path="res://scenes/Info3.gd" type="Script" id=3]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=6]
+
+[node name="Info3" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="frame"]
+margin_top = 32.0
+margin_right = 320.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 1 )
+text = "20 ORIGINAL LEVELS"
+align = 1
+
+[node name="Label5" type="Label" parent="frame"]
+margin_top = 56.0
+margin_right = 320.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 2 )
+text = "identical to ZX Spectrum game"
+align = 1
+
+[node name="Label2" type="Label" parent="frame"]
+margin_top = 80.0
+margin_right = 320.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 1 )
+text = "20 EXTENDED LEVELS"
+align = 1
+
+[node name="Label6" type="Label" parent="frame"]
+margin_top = 104.0
+margin_right = 320.0
+margin_bottom = 112.0
+custom_fonts/font = ExtResource( 2 )
+text = "exclusive for ZX Spectrum Next"
+align = 1
+
+[node name="Label3" type="Label" parent="frame"]
+margin_top = 128.0
+margin_right = 320.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 1 )
+text = "INFINITE LIVES"
+align = 1
+
+[node name="Label7" type="Label" parent="frame"]
+margin_top = 152.0
+margin_right = 320.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 2 )
+text = "die and repeat until you win!"
+align = 1
+
+[node name="Label4" type="Label" parent="frame"]
+margin_top = 176.0
+margin_right = 320.0
+margin_bottom = 192.0
+custom_fonts/font = ExtResource( 1 )
+text = "LEVEL BROWSER"
+align = 1
+
+[node name="Label8" type="Label" parent="frame"]
+margin_top = 200.0
+margin_right = 320.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 2 )
+text = "replay any already passed level"
+align = 1
+
+[node name="Label9" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 2 )
+text = "press any key or button"
+align = 1
+
+[node name="FadeRect" parent="." instance=ExtResource( 6 )]

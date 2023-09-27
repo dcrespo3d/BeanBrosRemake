@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/EnemyD.gd" type="Script" id=1]
+[ext_resource path="res://EnemyAnim.tres" type="SpriteFrames" id=2]
+
+[node name="EnemyD" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect1" type="ColorRect" parent="ColorRect"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( -28, -17 )
+color = Color( 1, 1, 0, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( -28, -17 )
+color = Color( 1, 0, 1, 1 )
+
+[node name="anisprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "enemy1"
+centered = false

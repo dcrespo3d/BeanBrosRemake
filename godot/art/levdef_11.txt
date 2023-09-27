@@ -1,0 +1,65 @@
+    26, // smarto_ini_cx
+    21, // smarto_ini_cy
+    1, // smarto_ini_lookleft
+    14, // dumber_ini_cx
+    24, // dumber_ini_cy
+    1, // dumber_ini_lookleft
+    7, // object_count
+    {
+        { // BEGIN OBJECT
+            1, // OTYPE_ENEMYH
+            10, // ini_cx
+            21, // ini_cy
+            18, // type|speed (extra1)
+            -40, // xpre (extra2)
+            40, // xpost (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            3, // OTYPE_ENEMYD
+            26, // ini_cx
+            11, // ini_cy
+            1, // type (extra1)
+            -2, // advx (extra2)
+            -2, // advy (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            4, // OTYPE_SPIKES
+            32, // ini_cx
+            24, // ini_cy
+            0, // unused (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            5, // OTYPE_DOOR
+            8, // ini_cx
+            21, // ini_cy
+            1, // closed (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            5, // OTYPE_DOOR
+            24, // ini_cx
+            24, // ini_cy
+            1, // closed (extra1)
+            0, // unused (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            6, // OTYPE_LEVER
+            33, // ini_cx
+            11, // ini_cy
+            1, // closed (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+        { // BEGIN OBJECT
+            7, // OTYPE_CONV
+            10, // ini_cx1
+            9, // ini_cy
+            31, // ini_cx2 (extra1)
+            0, // isLeft (extra2)
+            0, // unused (extra3)
+        }, // END OBJECT
+    }

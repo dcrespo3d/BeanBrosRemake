@@ -1,0 +1,363 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://TileSet-graphic.tres" type="TileSet" id=1]
+[ext_resource path="res://art/colmap.png" type="Texture" id=2]
+[ext_resource path="res://art/bblev01.png" type="Texture" id=3]
+[ext_resource path="res://scripts/GameScreen.gd" type="Script" id=4]
+[ext_resource path="res://objects/PlayerDumb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/PlayerSmart.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/EnemyD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/EnemyH.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objects/Lever.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objects/EnemySpike.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objects/EnemyV.tscn" type="PackedScene" id=13]
+
+[sub_resource type="TileSet" id=2]
+0/name = "colmap.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 8, 8 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "colmap.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 8, 0, 8, 8 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "colmap.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 16, 0, 8, 8 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "colmap.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 24, 0, 8, 8 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "colmap.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 32, 0, 8, 8 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "colmap.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 40, 0, 8, 8 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "colmap.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 48, 0, 8, 8 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "colmap.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 56, 0, 8, 8 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "colmap.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 8, 8, 8 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "colmap.png 9"
+9/texture = ExtResource( 2 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 8, 8, 8, 8 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+10/name = "colmap.png 10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 16, 8, 8, 8 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "colmap.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 24, 8, 8, 8 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape_one_way = false
+11/shape_one_way_margin = 0.0
+11/shapes = [  ]
+11/z_index = 0
+12/name = "colmap.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 32, 8, 8, 8 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+13/name = "colmap.png 13"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 40, 8, 8, 8 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "colmap.png 14"
+14/texture = ExtResource( 2 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 48, 8, 8, 8 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "colmap.png 15"
+15/texture = ExtResource( 2 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 56, 8, 8, 8 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 4 )
+levnum = 36
+wall_offset = 5
+plat_offset = 2
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_top = 8.0
+margin_right = 320.0
+margin_bottom = 248.0
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[node name="Bblev" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 32, 32 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="tmap_gra" type="TileMap" parent="frame"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -393149, 10, 0, 65536, 2, 0, 65537, 3, 0, 65539, 0, 0, 65540, 1, 0, 65542, 1, 0, 65544, 1, 0, 65546, 1, 0, 65548, 0, 0, 65549, 3, 0, 65551, 1, 0, 65553, 1, 0, 65555, 1, 0, 65557, 0, 0, 65558, 1, 0, 65560, 3, 0, 65562, 1, 0, 65564, 1, 0, 65566, 0, 0, 65567, 1, 0, 65569, 0, 0, 65570, 1, 0, 65572, 0, 0, 65573, 2, 0, 65574, 3, 0, 131075, 1, 0, 131077, 3, 0, 131079, 1, 0, 131081, 1, 0, 131083, 1, 0, 131087, 0, 0, 131088, 1, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 1, 0, 131095, 0, 0, 131098, 0, 0, 131099, 1, 0, 131101, 1, 0, 131103, 0, 0, 131104, 1, 0, 131106, 2, 0, 131107, 3, 0, 196608, 1, 0, 196645, 3, 0, 196647, 0, 0, 262144, 3, 0, 262179, 1, 0, 262183, 2, 0, 327690, 7, 0, 327691, 9, 0, 327692, 9, 0, 327693, 9, 0, 327694, 9, 0, 327695, 9, 0, 327696, 9, 0, 327697, 9, 0, 327698, 9, 0, 327699, 9, 0, 327700, 9, 0, 327701, 9, 0, 327702, 9, 0, 327703, 9, 0, 327704, 9, 0, 327705, 9, 0, 327706, 9, 0, 327707, 9, 0, 327708, 9, 0, 327709, 9, 0, 327710, 9, 0, 327711, 10, 0, 327715, 0, 0, 327716, 3, 0, 327718, 2, 0, 393216, 0, 0, 393217, 0, 0, 393255, 0, 0, 458752, 1, 0, 458760, 4, 0, 458761, 6, 0, 458790, 2, 0, 458791, 0, 0, 524288, 2, 0, 524289, 0, 0, 524303, 26, 0, 524304, 26, 0, 524305, 26, 0, 524306, 15, 0, 524307, 17, 0, 524308, 17, 0, 524309, 17, 0, 524310, 17, 0, 524311, 17, 0, 524312, 17, 0, 524313, 17, 0, 524314, 17, 0, 524315, 17, 0, 524316, 17, 0, 524317, 17, 0, 524318, 17, 0, 524319, 17, 0, 524320, 17, 0, 524321, 17, 0, 524322, 18, 0, 524327, 2, 0, 589825, 2, 0, 589839, 23, 0, 589840, 24, 0, 589841, 25, 0, 589862, 2, 0, 655360, 0, 0, 655399, 0, 0, 720896, 1, 0, 720934, 2, 0, 720935, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 5, 0, 786435, 5, 0, 786436, 5, 0, 786437, 1, 0, 786439, 2, 0, 786440, 5, 0, 786441, 6, 0, 786468, 4, 0, 786469, 5, 0, 786471, 0, 0, 851968, 3, 0, 852006, 0, 0, 852007, 2, 0, 917511, 3, 0, 917542, 2, 0, 983040, 0, 0, 983041, 0, 0, 983042, 5, 0, 983043, 5, 0, 983044, 5, 0, 983045, 1, 0, 983049, 1, 0, 983051, 1, 0, 983053, 0, 0, 983054, 5, 0, 983055, 5, 0, 983056, 5, 0, 983057, 5, 0, 983058, 5, 0, 983059, 5, 0, 983060, 5, 0, 983061, 5, 0, 983062, 5, 0, 983063, 5, 0, 983064, 5, 0, 983065, 5, 0, 983066, 1, 0, 983079, 2, 0, 1048576, 2, 0, 1048577, 0, 0, 1048602, 2, 0, 1048603, 3, 0, 1048605, 0, 0, 1048614, 0, 0, 1114113, 2, 0, 1114148, 1, 0, 1114150, 1, 0, 1179648, 0, 0, 1179686, 0, 0, 1179687, 2, 0, 1245184, 3, 0, 1245221, 3, 0, 1310722, 1, 0, 1310724, 1, 0, 1310726, 1, 0, 1310728, 1, 0, 1310730, 1, 0, 1310732, 3, 0, 1310734, 6, 0, 1310739, 15, 0, 1310740, 18, 0, 1310745, 4, 0, 1310746, 1, 0, 1310748, 1, 0, 1310750, 0, 0, 1310751, 1, 0, 1310753, 1, 0, 1310755, 1, 0, 1310759, 2, 0, 1376256, 0, 0, 1376257, 2, 0, 1376282, 0, 0, 1376283, 2, 0, 1376294, 2, 0, 1441792, 2, 0, 1441804, 0, 0, 1441805, 0, 0, 1441818, 2, 0, 1441831, 2, 0, 1507329, 2, 0, 1507333, 4, 0, 1507334, 5, 0, 1507335, 5, 0, 1507336, 5, 0, 1507337, 5, 0, 1507338, 5, 0, 1507339, 5, 0, 1507340, 1, 0, 1507342, 5, 0, 1507343, 6, 0, 1507355, 2, 0, 1507366, 2, 0, 1572864, 2, 0, 1572876, 0, 0, 1572877, 0, 0, 1572890, 2, 0, 1572903, 2, 0, 1638401, 2, 0, 1638412, 3, 0, 1638427, 0, 0, 1638438, 2, 0, 1703936, 2, 0, 1703943, 4, 0, 1703944, 5, 0, 1703945, 6, 0, 1703955, 4, 0, 1703956, 6, 0, 1703962, 1, 0, 1703975, 0, 0, 1769473, 2, 0, 1769510, 3, 0, 1835008, 0, 0, 1900544, 3, 0, 1900546, 0, 0, 1900547, 1, 0, 1900549, 0, 0, 1900550, 1, 0, 1900552, 1, 0, 1900554, 1, 0, 1900556, 3, 0, 1900558, 0, 0, 1900559, 1, 0, 1900561, 1, 0, 1900563, 1, 0, 1900565, 1, 0, 1900567, 1, 0, 1900569, 0, 0, 1900570, 3, 0, 1900572, 1, 0, 1900574, 1, 0, 1900576, 1, 0, 1900578, 1, 0, 1900580, 0, 0, 1900581, 3, 0, 1900583, 0, 0, 1966082, 1, 0, 1966084, 1, 0, 1966086, 0, 0, 1966087, 1, 0, 1966089, 0, 0, 1966090, 0, 0, 1966091, 0, 0, 1966094, 1, 0, 1966096, 1, 0, 1966098, 0, 0, 1966099, 0, 0, 1966100, 1, 0, 1966102, 1, 0, 1966104, 0, 0, 1966105, 0, 0, 1966108, 0, 0, 1966109, 1, 0, 1966111, 1, 0, 1966113, 1, 0, 1966115, 1, 0, 1966119, 0, 0 )
+
+[node name="tmap_col" type="TileMap" parent="frame"]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="smarto" parent="frame" instance=ExtResource( 6 )]
+position = Vector2( 16, 216 )
+
+[node name="dumber" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 256, 216 )
+
+[node name="Door" parent="frame" instance=ExtResource( 8 )]
+position = Vector2( 96, 216 )
+
+[node name="Door4" parent="frame" instance=ExtResource( 8 )]
+position = Vector2( 192, 48 )
+
+[node name="Door2" parent="frame" instance=ExtResource( 8 )]
+position = Vector2( 208, 216 )
+
+[node name="Door3" parent="frame" instance=ExtResource( 8 )]
+position = Vector2( 208, 144 )
+closed = false
+
+[node name="EnemyD" parent="frame" instance=ExtResource( 9 )]
+position = Vector2( 224, 216 )
+
+[node name="anisprite" parent="frame/EnemyD" index="1"]
+animation = "enemy3"
+
+[node name="EnemyH1" parent="frame" instance=ExtResource( 10 )]
+position = Vector2( 48, 192 )
+
+[node name="EnemyH5" parent="frame" instance=ExtResource( 10 )]
+position = Vector2( 168, 104 )
+xpre = -40
+xpost = 40
+
+[node name="EnemyH2" parent="frame" instance=ExtResource( 10 )]
+position = Vector2( 152, 216 )
+advmask = 2
+xpre = -40
+xpost = 40
+
+[node name="anisprite" parent="frame/EnemyH2" index="1"]
+animation = "enemy2"
+
+[node name="EnemyH3" parent="frame" instance=ExtResource( 10 )]
+position = Vector2( 32, 104 )
+advmask = 4
+xpre = -40
+xpost = 40
+
+[node name="anisprite" parent="frame/EnemyH3" index="1"]
+animation = "enemy3"
+
+[node name="Lever" parent="frame" instance=ExtResource( 11 )]
+position = Vector2( 16, 168 )
+
+[node name="anisprite" parent="frame/Lever" index="0"]
+flip_h = true
+
+[node name="Lever2" parent="frame" instance=ExtResource( 11 )]
+position = Vector2( 16, 104 )
+
+[node name="anisprite" parent="frame/Lever2" index="0"]
+flip_h = true
+
+[node name="EnemySpike" parent="frame" instance=ExtResource( 12 )]
+position = Vector2( 96, 144 )
+
+[node name="EnemyV" parent="frame" instance=ExtResource( 13 )]
+position = Vector2( 16, 48 )
+advmask = 2
+ypre = -3
+ypost = 4
+
+[node name="Lever3" parent="frame" instance=ExtResource( 11 )]
+position = Vector2( 288, 56 )
+
+[node name="FadeRect" parent="." instance=ExtResource( 7 )]
+
+[editable path="frame/EnemyD"]
+[editable path="frame/EnemyH2"]
+[editable path="frame/EnemyH3"]
+[editable path="frame/Lever"]
+[editable path="frame/Lever2"]

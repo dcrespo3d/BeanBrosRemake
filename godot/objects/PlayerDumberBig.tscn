@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/PlayerHuge.gd" type="Script" id=1]
+[ext_resource path="res://art/col-dumber-big-shoes.png" type="Texture" id=2]
+[ext_resource path="res://art/col-dumber-big-head.png" type="Texture" id=3]
+
+[node name="PlayerDumberBig" type="Node2D"]
+script = ExtResource( 1 )
+anim_phase = 11
+
+[node name="shoes" type="Sprite" parent="."]
+position = Vector2( 0, 16 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="head" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false

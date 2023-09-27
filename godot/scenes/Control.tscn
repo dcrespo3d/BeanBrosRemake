@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Control.gd" type="Script" id=1]
+[ext_resource path="res://bitmapfonts/bbfont-orange-8x8.tres" type="BitmapFont" id=2]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bitmapfonts/bbfont-blue-16x12.tres" type="BitmapFont" id=10]
+
+[node name="Control" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_right = 320.0
+margin_bottom = 256.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="title" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 16.0
+margin_right = 280.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 10 )
+text = "GAME CONTROLS"
+
+[node name="title2" type="Label" parent="frame"]
+margin_left = 32.0
+margin_top = 40.0
+margin_right = 304.0
+margin_bottom = 216.0
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 2 )
+text = "Keyboard and Gamepad
+can be used simultaneously.
+
+Keyboard:
+
+JUMP / UP    : W /     ARROW UP
+SWAP / DOWN  : S /     ARROW DOWN
+LEFT         : A / O / ARROW LEFT
+RIGHT        : D / P / ARROW RIGHT
+SELECT/PAUSE : ENTER / SPACE
+
+
+Gamepad:
+
+MENU UP     : UP
+MENU DOWN   : DOWN
+MENU SELECT : A BUTTON
+LEFT        : LEFT
+RIGHT       : RIGHT
+JUMP        : A BUTTON
+SWAP        : B BUTTON
+PAUSE       : START"
+
+[node name="Label9" type="Label" parent="frame"]
+margin_top = 232.0
+margin_right = 320.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 2 )
+text = "press any key or button"
+align = 1
+
+[node name="FadeRect" parent="." instance=ExtResource( 8 )]

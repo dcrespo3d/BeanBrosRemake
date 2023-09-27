@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/GameScreen.gd" type="Script" id=1]
+[ext_resource path="res://objects/FadeRect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/PlayerDumb.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/EnemyH.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/PlayerSmart.tscn" type="PackedScene" id=9]
+[ext_resource path="res://TileSet-graphic.tres" type="TileSet" id=10]
+[ext_resource path="res://art/bblev06.png" type="Texture" id=11]
+[ext_resource path="res://TileSet-collision.tres" type="TileSet" id=12]
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+levnum = 6
+wall_offset = 1
+plat_offset = 2
+
+[node name="bg360x270" type="ColorRect" parent="."]
+margin_right = 360.0
+margin_bottom = 270.0
+color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+
+[node name="frame" type="Node2D" parent="."]
+position = Vector2( 20, 7 )
+
+[node name="bg" type="ColorRect" parent="frame"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 288.0
+margin_bottom = 216.0
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
+
+[node name="Bblev" type="Sprite" parent="frame"]
+visible = false
+position = Vector2( 32, 32 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="tmap_gra" type="TileMap" parent="frame"]
+tile_set = ExtResource( 10 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -393149, 10, 0, 262148, 3, 0, 262150, 1, 0, 262152, 3, 0, 262154, 0, 0, 262155, 0, 0, 262156, 1, 0, 262158, 0, 0, 262159, 0, 0, 262160, 1, 0, 262162, 1, 0, 262164, 1, 0, 262166, 1, 0, 262168, 1, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 3, 0, 262176, 1, 0, 262178, 3, 0, 327686, 0, 0, 327687, 0, 0, 327712, 0, 0, 327713, 0, 0, 393220, 0, 0, 393221, 1, 0, 393248, 0, 0, 393249, 1, 0, 393251, 0, 0, 458756, 0, 0, 458786, 0, 0, 458787, 0, 0, 524292, 2, 0, 524298, 26, 0, 524299, 26, 0, 524323, 0, 0, 589834, 23, 0, 589835, 25, 0, 589859, 0, 0, 655364, 2, 0, 655395, 2, 0, 720905, 4, 0, 720906, 5, 0, 720907, 5, 0, 720908, 5, 0, 720909, 5, 0, 720910, 5, 0, 720911, 5, 0, 720912, 5, 0, 720913, 5, 0, 720914, 5, 0, 720915, 5, 0, 720916, 5, 0, 720917, 5, 0, 720918, 5, 0, 720919, 5, 0, 720920, 5, 0, 720921, 5, 0, 720922, 5, 0, 720923, 6, 0, 786436, 2, 0, 786467, 2, 0, 851999, 4, 0, 852000, 5, 0, 852001, 6, 0, 917508, 2, 0, 917539, 2, 0, 1048580, 0, 0, 1048585, 4, 0, 1048586, 5, 0, 1048587, 5, 0, 1048588, 5, 0, 1048589, 5, 0, 1048590, 5, 0, 1048591, 5, 0, 1048592, 5, 0, 1048593, 5, 0, 1048594, 5, 0, 1048595, 5, 0, 1048596, 5, 0, 1048597, 5, 0, 1048598, 5, 0, 1048599, 5, 0, 1048600, 5, 0, 1048601, 5, 0, 1048602, 5, 0, 1048603, 5, 0, 1048604, 5, 0, 1048605, 5, 0, 1048606, 5, 0, 1048607, 6, 0, 1048611, 0, 0, 1114116, 2, 0, 1114147, 0, 0, 1179683, 0, 0, 1245188, 2, 0, 1245189, 5, 0, 1245190, 6, 0, 1245219, 0, 0, 1310755, 2, 0, 1376260, 0, 0, 1441796, 3, 0, 1441798, 2, 0, 1441799, 3, 0, 1441801, 5, 0, 1441802, 5, 0, 1441803, 5, 0, 1441804, 5, 0, 1441805, 5, 0, 1441806, 5, 0, 1441807, 5, 0, 1441808, 5, 0, 1441809, 5, 0, 1441810, 5, 0, 1441811, 5, 0, 1441812, 5, 0, 1441813, 5, 0, 1441814, 6, 0, 1441827, 2, 0, 1507351, 4, 0, 1507352, 5, 0, 1507353, 5, 0, 1507354, 5, 0, 1507355, 5, 0, 1507356, 5, 0, 1507357, 5, 0, 1507358, 5, 0, 1507359, 6, 0, 1572868, 0, 0, 1572899, 0, 0, 1638404, 2, 0, 1638435, 0, 0, 1703941, 0, 0, 1703942, 1, 0, 1703944, 1, 0, 1703946, 1, 0, 1703948, 1, 0, 1703950, 1, 0, 1703952, 1, 0, 1703954, 0, 0, 1703955, 0, 0, 1703956, 0, 0, 1703957, 0, 0, 1703958, 0, 0, 1703959, 0, 0, 1703960, 1, 0, 1703962, 1, 0, 1703964, 1, 0, 1703966, 1, 0, 1703968, 1, 0, 1703970, 0, 0, 1703971, 0, 0 )
+
+[node name="tmap_col" type="TileMap" parent="frame"]
+visible = false
+modulate = Color( 1, 1, 1, 0.247059 )
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 8, 8 )
+format = 1
+
+[node name="smarto" parent="frame" instance=ExtResource( 9 )]
+position = Vector2( 48, 192 )
+lookleft = true
+
+[node name="dumber" parent="frame" instance=ExtResource( 5 )]
+position = Vector2( 72, 192 )
+lookleft = true
+
+[node name="EnemyH1" parent="frame" instance=ExtResource( 7 )]
+position = Vector2( 48, 160 )
+xpre = -1
+xpost = 27
+
+[node name="EnemyH2" parent="frame" instance=ExtResource( 7 )]
+position = Vector2( 144, 72 )
+advmask = 2
+xpre = -13
+xpost = 15
+
+[node name="anisprite" parent="frame/EnemyH2" index="1"]
+animation = "enemy2"
+
+[node name="EnemyH3" parent="frame" instance=ExtResource( 7 )]
+position = Vector2( 256, 112 )
+advmask = -1
+xpre = -27
+xpost = 1
+
+[node name="EnemyH4" parent="frame" instance=ExtResource( 7 )]
+position = Vector2( 256, 192 )
+advmask = -2
+xpre = -27
+xpost = 1
+
+[node name="anisprite" parent="frame/EnemyH4" index="1"]
+animation = "enemy2"
+
+[node name="FadeRect" parent="." instance=ExtResource( 4 )]
+
+[editable path="frame/EnemyH2"]
+[editable path="frame/EnemyH3"]
+[editable path="frame/EnemyH4"]
