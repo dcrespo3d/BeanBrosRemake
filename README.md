@@ -13,7 +13,7 @@ For more info and downloads, see the [game page at itch.io](https://davidprogram
 
 There is an [HTML5 version you can try](https://dcrespo3d.github.io/BeanBrosRemake/). It may be outdated, the official version is that of the game page.
 
-The has been developed using:
+The game has been developed using:
 
 - [Godot Engine](https://godotengine.org/) __(3.5.1)__ for prototyping.
 - The [Z88DK C compiler](https://z88dk.org/site/).
