@@ -74,17 +74,6 @@ func _ready():
 	$FadeRect.connect("fadeOutFinished", self, "onFadeOutFinished")
 	BGM.playLevelSong(levnum)
 	
-	if not G.isLevSelMode:
-		if not G.isExtLevMode:
-			if G.unlockedLevel.ori < levnum:
-				G.unlockedLevel.ori = levnum
-				G.saveUnlockedLevel()
-		else:
-			if G.unlockedLevel.ext < levnum:
-				G.unlockedLevel.ext = levnum
-				G.saveUnlockedLevel()
-	
-	
 func _physics_process(delta):
 	# pause
 	if G.paused: return
@@ -553,14 +542,27 @@ func onFadeOutFinished():
 		get_tree().reload_current_scene()
 	elif not G.isLevSelMode:
 		G.nextLevnum = 1 + levnum
+		saveUnlockedLevel(G.nextLevnum);
 		if G.nextLevnum == 21 or G.nextLevnum == 41:
 			get_tree().change_scene("res://scenes/Final1.tscn")
 		else:
 			get_tree().change_scene('res://scenes/Inter.tscn')
 			
 	else:
+		G.nextLevnum = 1 + levnum
+		saveUnlockedLevel(G.nextLevnum);
 		get_tree().change_scene('res://scenes/LevelSelect.tscn')
 		
+func saveUnlockedLevel(levnumToUnlock):
+	if not G.isExtLevMode:
+		if G.unlockedLevel.ori < levnumToUnlock and levnumToUnlock < 21:
+			G.unlockedLevel.ori = levnumToUnlock
+			G.saveUnlockedLevel()
+	else:
+		if G.unlockedLevel.ext < levnumToUnlock and levnumToUnlock < 41:
+			G.unlockedLevel.ext = levnumToUnlock
+			G.saveUnlockedLevel()
+
 
 ################################################################################
 ################################################################################
