@@ -84,35 +84,22 @@ static bool exit_to_menu = false;
 
 static void on_fade_update(s8 palval);
 
+static void play_song(u8 songidx)
+{
+    if      (0 == songidx) music_song_init(song_meteo);
+    else if (1 == songidx) music_song_init(song_lonely);
+    else if (2 == songidx) music_song_init(song_revolution);
+    else                   music_song_init(song_leaving);
+}
+
 void sg_enter()
 {
-    // unlock if needed
-    if (!sg_is_select_level) {
-        if (!sg_is_ext_level) {
-            if (sg_ful_ori < sg_level_index) {
-                sg_ful_ori = sg_level_index;
-                music_song_init(NULL);
-                persist_save_levdata();
-            }
-        }
-        else {
-            if (sg_ful_ext < sg_level_index) {
-                sg_ful_ext = sg_level_index;
-                music_song_init(NULL);
-                persist_save_levdata();
-            }
-        }
-    }
-
     // setup palette fade scheme
     palette_fade_init(SCREEN_TYPE_GAME, on_fade_update);
 
     // setup music
     u8 songidx = sg_level_index & 3;
-    if      (0 == songidx) music_song_init(song_meteo);
-    else if (1 == songidx) music_song_init(song_lonely);
-    else if (2 == songidx) music_song_init(song_revolution);
-    else                   music_song_init(song_leaving);
+    play_song(songidx);
 
     AVOID_MUSIC_STUTTER
 
@@ -237,6 +224,26 @@ void sg_update()
     if (moot) displayLineTiming();
 }
 
+static void saveUnlockedLevel()
+{
+    if (!sg_is_ext_level) {
+        if (sg_ful_ori < sg_level_index && sg_level_index < 21) {
+            sg_ful_ori = sg_level_index;
+            music_song_init(NULL);
+            persist_save_levdata();
+        }
+    }
+    else {
+        if (sg_ful_ext < sg_level_index && sg_level_index < 41) {
+            sg_ful_ext = sg_level_index;
+            music_song_init(NULL);
+            persist_save_levdata();
+        }
+    }
+    u8 songidx = sg_level_index & 3;
+    play_song(songidx);
+}
+
 static void on_fade_update(s8 palval)
 {
     anisprite_tick();
@@ -262,6 +269,7 @@ static void on_fade_update(s8 palval)
             sg_enter();
         else if (!sg_is_select_level) {
             sg_level_index++;
+            saveUnlockedLevel();
             if (sg_level_index == 20 || sg_level_index == 40) {
                 sc_switch_screen(sf1_enter, sf1_update, NULL);
                 return;
@@ -269,8 +277,11 @@ static void on_fade_update(s8 palval)
             if (sg_level_index >= level_count) sg_level_index = 0;
             sc_switch_screen(si_enter, si_update, NULL);
         }
-        else
+        else {
+            sg_level_index++;
+            saveUnlockedLevel();
             sc_switch_screen(sls_enter, sls_update, NULL);
+        }
     }
 }
 
