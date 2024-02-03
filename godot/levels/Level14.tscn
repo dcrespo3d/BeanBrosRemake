@@ -292,32 +292,24 @@ position = Vector2( 232, 136 )
 advmask = -2
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH1" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyH2" parent="frame" instance=ExtResource( 6 )]
 position = Vector2( 208, 192 )
 advmask = -2
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH2" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyD" parent="frame" instance=ExtResource( 8 )]
 position = Vector2( 200, 96 )
 advx = -2
 advy = -2
-
-[node name="anisprite" parent="frame/EnemyD" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="Lever" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 40, 184 )
-
-[node name="anisprite" parent="frame/Lever" index="0"]
-flip_h = true
+flip = true
 
 [node name="Door" parent="frame" instance=ExtResource( 10 )]
 position = Vector2( 56, 104 )
@@ -329,8 +321,3 @@ position = Vector2( 248, 72 )
 position = Vector2( 264, 192 )
 
 [node name="FadeRect" parent="." instance=ExtResource( 2 )]
-
-[editable path="frame/EnemyH1"]
-[editable path="frame/EnemyH2"]
-[editable path="frame/EnemyD"]
-[editable path="frame/Lever"]

@@ -321,15 +321,11 @@ closed = false
 
 [node name="Lever" parent="frame" instance=ExtResource( 9 )]
 position = Vector2( 216, 192 )
-
-[node name="anisprite" parent="frame/Lever" index="0"]
-flip_h = true
+flip = true
 
 [node name="Lever2" parent="frame" instance=ExtResource( 9 )]
 position = Vector2( 16, 72 )
-
-[node name="anisprite" parent="frame/Lever2" index="0"]
-flip_h = true
+flip = true
 
 [node name="EnemySpike" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 40, 104 )
@@ -363,12 +359,6 @@ position = Vector2( 16, 40 )
 advmask = 2
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH1" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="FadeRect" parent="." instance=ExtResource( 6 )]
-
-[editable path="frame/Lever"]
-[editable path="frame/Lever2"]
-[editable path="frame/EnemyH1"]

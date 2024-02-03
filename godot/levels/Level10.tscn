@@ -302,18 +302,14 @@ position = Vector2( 48, 192 )
 advmask = -2
 xpre = -1
 xpost = 27
-
-[node name="anisprite" parent="frame/EnemyH2" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyH3" parent="frame" instance=ExtResource( 8 )]
 position = Vector2( 184, 144 )
 advmask = -2
 xpre = -12
 xpost = 10
-
-[node name="anisprite" parent="frame/EnemyH3" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemySpike" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 88, 88 )
@@ -322,6 +318,3 @@ position = Vector2( 88, 88 )
 position = Vector2( 240, 112 )
 
 [node name="FadeRect" parent="." instance=ExtResource( 4 )]
-
-[editable path="frame/EnemyH2"]
-[editable path="frame/EnemyH3"]

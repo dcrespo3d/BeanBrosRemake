@@ -329,15 +329,11 @@ position = Vector2( 296, 16 )
 
 [node name="Lever2" parent="frame" instance=ExtResource( 5 )]
 position = Vector2( 8, 88 )
-
-[node name="anisprite" parent="frame/Lever2" index="0"]
-flip_h = true
+flip = true
 
 [node name="Lever5" parent="frame" instance=ExtResource( 5 )]
 position = Vector2( 8, 16 )
-
-[node name="anisprite" parent="frame/Lever5" index="0"]
-flip_h = true
+flip = true
 
 [node name="EnemySpike2" parent="frame" instance=ExtResource( 10 )]
 position = Vector2( 192, 168 )
@@ -396,8 +392,6 @@ ypost = 0
 
 [node name="FadeRect" parent="." instance=ExtResource( 9 )]
 
-[editable path="frame/Lever2"]
-[editable path="frame/Lever5"]
 [editable path="frame/EnemyV"]
 [editable path="frame/EnemyV3"]
 [editable path="frame/EnemyV2"]

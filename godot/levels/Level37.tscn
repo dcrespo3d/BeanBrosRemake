@@ -312,63 +312,47 @@ position = Vector2( 104, 168 )
 
 [node name="Lever2" parent="frame" instance=ExtResource( 8 )]
 position = Vector2( 40, 144 )
-
-[node name="anisprite" parent="frame/Lever2" index="0"]
-flip_h = true
+flip = true
 
 [node name="Lever3" parent="frame" instance=ExtResource( 8 )]
 position = Vector2( 40, 192 )
-
-[node name="anisprite" parent="frame/Lever3" index="0"]
-flip_h = true
+flip = true
 
 [node name="EnemyV" parent="frame" instance=ExtResource( 10 )]
 position = Vector2( 48, 24 )
 advmask = 4
 ypre = 0
 ypost = 5
-
-[node name="anisprite" parent="frame/EnemyV" index="1"]
-animation = "enemy3"
+anim = 2
 
 [node name="EnemyH1" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 48, 144 )
 advmask = 2
-
-[node name="anisprite" parent="frame/EnemyH1" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyH2" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 64, 192 )
 advmask = 2
-
-[node name="anisprite" parent="frame/EnemyH2" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyH3" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 88, 168 )
 advmask = 2
-
-[node name="anisprite" parent="frame/EnemyH3" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyH4" parent="frame" instance=ExtResource( 11 )]
 position = Vector2( 112, 120 )
 advmask = 4
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH4" index="1"]
-animation = "enemy3"
+anim = 2
 
 [node name="EnemyV2" parent="frame" instance=ExtResource( 10 )]
 position = Vector2( 208, 120 )
 advmask = 2
 ypre = -7
 ypost = 0
-
-[node name="anisprite" parent="frame/EnemyV2" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="EnemyV3" parent="frame" instance=ExtResource( 10 )]
 position = Vector2( 208, 136 )
@@ -391,12 +375,3 @@ position = Vector2( 168, 136 )
 position = Vector2( 120, 216 )
 
 [node name="FadeRect" parent="." instance=ExtResource( 7 )]
-
-[editable path="frame/Lever2"]
-[editable path="frame/Lever3"]
-[editable path="frame/EnemyV"]
-[editable path="frame/EnemyH1"]
-[editable path="frame/EnemyH2"]
-[editable path="frame/EnemyH3"]
-[editable path="frame/EnemyH4"]
-[editable path="frame/EnemyV2"]

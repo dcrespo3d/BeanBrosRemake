@@ -80,15 +80,11 @@ position = Vector2( 160, 128 )
 
 [node name="Lever" parent="frame" instance=ExtResource( 1 )]
 position = Vector2( 48, 136 )
-
-[node name="anisprite" parent="frame/Lever" index="0"]
-flip_h = true
+flip = true
 
 [node name="Lever2" parent="frame" instance=ExtResource( 1 )]
 position = Vector2( 40, 184 )
-
-[node name="anisprite" parent="frame/Lever2" index="0"]
-flip_h = true
+flip = true
 
 [node name="Door" parent="frame" instance=ExtResource( 2 )]
 position = Vector2( 144, 96 )
@@ -98,6 +94,3 @@ position = Vector2( 88, 192 )
 closed = false
 
 [node name="FadeRect" parent="." instance=ExtResource( 3 )]
-
-[editable path="frame/Lever"]
-[editable path="frame/Lever2"]

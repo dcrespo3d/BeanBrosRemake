@@ -287,9 +287,7 @@ lookleft = true
 
 [node name="Lever" parent="frame" instance=ExtResource( 9 )]
 position = Vector2( 80, 112 )
-
-[node name="anisprite" parent="frame/Lever" index="0"]
-flip_h = true
+flip = true
 
 [node name="EnemySpike" parent="frame" instance=ExtResource( 10 )]
 position = Vector2( 48, 192 )
@@ -299,34 +297,23 @@ position = Vector2( 48, 48 )
 advmask = -4
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH1" index="1"]
-animation = "enemy3"
+anim = 2
 
 [node name="EnemyH2" parent="frame" instance=ExtResource( 6 )]
 position = Vector2( 144, 160 )
 advmask = -4
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH2" index="1"]
-animation = "enemy3"
+anim = 2
 
 [node name="EnemyH3" parent="frame" instance=ExtResource( 6 )]
 position = Vector2( 224, 192 )
 advmask = -2
 xpre = -40
 xpost = 40
-
-[node name="anisprite" parent="frame/EnemyH3" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="Door" parent="frame" instance=ExtResource( 8 )]
 position = Vector2( 232, 128 )
 
 [node name="FadeRect" parent="." instance=ExtResource( 2 )]
-
-[editable path="frame/Lever"]
-[editable path="frame/EnemyH1"]
-[editable path="frame/EnemyH2"]
-[editable path="frame/EnemyH3"]

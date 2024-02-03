@@ -303,10 +303,6 @@ position = Vector2( 208, 112 )
 advmask = -2
 xpre = -21
 xpost = 0
-
-[node name="anisprite" parent="frame/EnemyH1" index="1"]
-animation = "enemy2"
+anim = 1
 
 [node name="FadeRect" parent="." instance=ExtResource( 2 )]
-
-[editable path="frame/EnemyH1"]
