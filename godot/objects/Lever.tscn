@@ -64,5 +64,7 @@ script = ExtResource( 3 )
 
 [node name="anisprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 21 )
-animation = "open"
+animation = "clos"
+frame = 4
+playing = true
 centered = false

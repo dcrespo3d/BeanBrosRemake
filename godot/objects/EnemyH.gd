@@ -25,21 +25,26 @@
 #
 ###############################################################################
 
-extends Node2D
+tool
 
-onready var G = get_node('/root/Global')
+extends Node2D
 
 export var advmask = 1
 export var xpre = -8
 export var xpost = 8
+export var anim = 0 setget set_anim
 
 # collision tiles
 var tcol = null
 
 var anims = ['enemy1', 'enemy2', 'enemy3']
 
-# Called when the node enters the scene tree for the first time.
+var G
+
 func _ready():
+	if Engine.editor_hint: return
+	G = get_node('/root/Global')
+	
 	if advmask > 0:
 		fper = advmask
 		deltax = 1
@@ -57,6 +62,11 @@ var deltax
 var fper
 var fctr
 
+func set_anim(a):
+	if a < 0: a += 3
+	anim = a % 3
+	$anisprite.animation = anims[anim]
+
 func getType():
 	return 'enemyh'
 
@@ -67,6 +77,8 @@ func getAnimIndex():
 	return 0
 
 func _physics_process(delta):
+	if Engine.editor_hint: return
+	
 	# pause
 	$anisprite.playing = not G.paused
 	if G.paused: return

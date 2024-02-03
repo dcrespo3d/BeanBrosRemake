@@ -1,16 +1,28 @@
+tool
+
 extends Node2D
 
-onready var G = get_node('/root/Global')
-
-export var closed = true
+export var closed = true setget set_closed
+export var flip = false setget set_flip
 var touch = false
 
-# Called when the node enters the scene tree for the first time.
+func set_closed(c):
+	closed = c
+	updateClosedState()
+
+func set_flip(f):
+	flip = f
+	$anisprite.flip_h = flip
+
+var G
+
 func _ready():
+	if Engine.editor_hint: return
+	G = get_node('/root/Global')
 #	updateClosedState()
-	pass
 		
 func _physics_process(delta):
+	if Engine.editor_hint: return
 	# pause
 	# $anisprite.playing = not G.paused   # has side effects
 	if G.paused: return
