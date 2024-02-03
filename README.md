@@ -40,7 +40,9 @@ You should be able to directly modify files at `godot/art` and see your changes 
 ### Level designers:
 On Godot FileSystem, open folder res://levels and you will find Level01.tscn thru Level40.tscn, you should be able to tweak them.
 
-Open any level and you will be able to modify it, moving enemies and things. When moving enemies, beware: when a enemy has 'editable children', be sure to move the parent object, not the child sprite. Doing wrong will result in a collision inconsistency (the enemy is displayed in some place but its kill rectangle is in some other place). Drag it only from the '+' symbol at its top-left corner.
+Open any level and you will be able to modify it, moving enemies and things. ~~When moving enemies, beware: when a enemy has 'editable children', be sure to move the parent object, not the child sprite. Doing wrong will result in a collision inconsistency (the enemy is displayed in some place but its kill rectangle is in some other place). Drag it only from the '+' symbol at its top-left corner.~~
+
+Editable children have been removed - no more inconsistency. Just edit the properties for each enemy or thing.
 
 You can also modify floors and walls using the tilemap editor. But there are also pitfalls: Only base styles are usable (gray colored stone, light blue platforms). Using others will fail collision, do not use tiles with index > 30 (except 47 and 86).
 
