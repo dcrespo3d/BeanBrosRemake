@@ -69,6 +69,8 @@
 #define TEXT20 "Godot Engine | Z88DK"
 #define TEXT21 "Arkos Tracker 2 | Aseprite"
 
+#define TEXT22 "version 1.1 - press any key"
+
 #define NEWLINE print_char('\n')
 #define SETDEF  print_set_attr(TPAL_DEF << 4)
 #define SETGRAY print_set_attr(TPAL_LGRAY << 4)
@@ -149,7 +151,7 @@ void sab_enter_pg46()
     SETDEF;
 
     print_set_pos(0, 29);
-    println_ctr(MSG_PRESS_ANY_KEY, 40);
+    println_ctr(TEXT22, 40);
 
     // removed white frame
     // SETGRAY;
